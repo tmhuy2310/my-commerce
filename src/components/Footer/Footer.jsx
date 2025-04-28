@@ -13,8 +13,8 @@ const Footer = () => {
             <Container maxWidth="xl">
                 <Grid container spacing={4}>
                     {/* Store Information */}
-                    <Grid size={2}>
-                        <Typography variant="h6" gutterBottom>
+                    <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+                        <Typography variant="h6" gutterBottom sx={{ mb: 2 }}>
                             PhoneStore
                         </Typography>
                         <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
@@ -32,8 +32,8 @@ const Footer = () => {
                     </Grid>
 
                     {/* Shop Buttons */}
-                    <Grid size={2}>
-                        <Typography className="pb-5" variant="h5">
+                    <Grid size={{ xs: 12, sm: 6, md: 2 }}>
+                        <Typography className="pb-5" variant="h5" sx={{ mb: 2 }}>
                             Shop
                         </Typography>
                         <div>
@@ -59,8 +59,8 @@ const Footer = () => {
                     </Grid>
 
                     {/* Support Buttons */}
-                    <Grid size={2}>
-                        <Typography className="pb-5" variant="h5">
+                    <Grid size={{ xs: 12, sm: 6, md: 2 }}>
+                        <Typography className="pb-5" variant="h5" sx={{ mb: 2 }}>
                             Solutions
                         </Typography>
                         <div>
@@ -90,8 +90,8 @@ const Footer = () => {
                         </div>
                     </Grid>
                     {/* Support Buttons */}
-                    <Grid size={2}>
-                        <Typography className="pb-5" variant="h5">
+                    <Grid size={{ xs: 12, sm: 6, md: 2 }}>
+                        <Typography className="pb-5" variant="h5" sx={{ mb: 2 }}>
                             Documentation
                         </Typography>
                         <div>
@@ -107,14 +107,14 @@ const Footer = () => {
                     </Grid>
 
                     {/* Newsletter */}
-                    <Grid size={4}>
+                    <Grid size={{ xs: 12, md: 3 }}>
                         <Typography variant="h6" gutterBottom>
                             Stay Updated
                         </Typography>
                         <Typography variant="body2" sx={{ mb: 2 }}>
                             Subscribe to our newsletter for the latest deals and phone releases.
                         </Typography>
-                        <Box sx={{ display: 'flex' }}>
+                        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 1 }}>
                             <TextField
                                 size="small"
                                 placeholder="Your email"
@@ -129,7 +129,7 @@ const Footer = () => {
                                     },
                                 }}
                             />
-                            <Button variant="contained" color="secondary" sx={{ ml: 1 }}>
+                            <Button variant="contained" color="secondary" sx={{ minWidth: { xs: '100%', sm: 'auto' } }}>
                                 Join
                             </Button>
                         </Box>
@@ -150,16 +150,26 @@ const Footer = () => {
                 <Divider sx={{ my: 4, bgcolor: 'rgba(255, 255, 255, 0.2)' }} />
 
                 {/* Bottom Section */}
-                <Grid container justifyContent="space-between" alignItems="center">
-                    <Grid>
-                        <Typography variant="body2">&copy; 2025 PhoneStore. All rights reserved.</Typography>
+                <Grid
+                    container
+                    justifyContent="space-between"
+                    alignItems="center"
+                    spacing={2}
+                    direction={{ xs: 'column', sm: 'row' }}
+                >
+                    <Grid sx={{ xs: 12, sm: 6 }}>
+                        <Typography variant="body2" sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
+                            &copy; 2025 PhoneStore. All rights reserved.
+                        </Typography>
                     </Grid>
-                    <Grid>
-                        <Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
-                            <Button color="inherit" underline="hover" sx={{ mr: 2 }}>
+                    <Grid sx={{ xs: 12, sm: 6 }}>
+                        <Box
+                            sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: { xs: 'center', sm: 'flex-end' } }}
+                        >
+                            <Button color="inherit" underline="hover" sx={{ mr: { xs: 1, sm: 2 } }}>
                                 Privacy Policy
                             </Button>
-                            <Button color="inherit" underline="hover" sx={{ mr: 2 }}>
+                            <Button color="inherit" underline="hover" sx={{ mr: { xs: 1, sm: 2 } }}>
                                 Terms of Service
                             </Button>
                             <Button color="inherit" underline="hover">
