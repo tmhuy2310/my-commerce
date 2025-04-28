@@ -15,7 +15,7 @@ import {
 } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid';
-import ProductCard from './ProductCard';
+import ProductCard from '../../components/ProductCard/ProductCard';
 import data from '../../data/men_shirt.json';
 import { filters, singleFilter } from './FilterData';
 import { FormControlLabel, Radio, RadioGroup } from '@mui/material';
