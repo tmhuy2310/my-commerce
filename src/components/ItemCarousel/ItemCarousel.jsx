@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import HomeSectionCard from '../HomeSectionCard/HomeSectionCard';
+import SectionCard from '../HomeSectionCard/SectionCard';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { Button } from '@mui/material';
@@ -38,7 +38,7 @@ function ItemCarousel({ data, sectionName }) {
         }
     }, [screenWidth]);
 
-    const items = data.slice(0, 10).map((item, index) => <HomeSectionCard key={index} product={item} />);
+    const items = data.slice(0, 10).map((item, index) => <SectionCard key={index} product={item} />);
 
     const maxIndex = Math.max(0, Math.floor(items.length - visibleItems));
 
