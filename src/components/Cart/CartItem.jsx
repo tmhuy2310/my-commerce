@@ -3,7 +3,6 @@ import { NumberField } from '@base-ui-components/react/number-field';
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 
-
 const product = {
     name: 'Basic Tee 6-Pack',
     price: '$192',
@@ -14,10 +13,10 @@ const styles = {
     Field: 'flex flex-col items-start gap-1',
     Group: 'flex shadow-md rounded-xl overflow-hidden',
     Decrement:
-        'flex items-center justify-center w-12 h-12 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-l-xl transition-all duration-200 hover:from-indigo-500 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-2',
-    Input: 'w-14 h-12 border-t-2 border-b-2 border-indigo-600 bg-white px-2 text-center font-semibold text-gray-800 focus:outline-none focus:bg-gray-50',
+        'flex items-center justify-center w-10 h-10 bg-gradient-to-br from-indigo-600 to-purple-600 text-white rounded-l-xl transition-all duration-200 hover:from-indigo-500 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:ring-offset-2',
+    Input: 'w-14 h-10 border-t-2 border-b-2 border-indigo-600 bg-white px-2 text-center font-semibold text-gray-800 focus:outline-none focus:bg-gray-50',
     Increment:
-        'flex items-center justify-center w-12 h-12 bg-gradient-to-br from-orange-500 to-purple-600 text-white rounded-r-xl transition-all duration-200 hover:from-orange-400 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:ring-offset-2',
+        'flex items-center justify-center w-10 h-10 bg-gradient-to-br from-orange-500 to-purple-600 text-white rounded-r-xl transition-all duration-200 hover:from-orange-400 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:ring-offset-2',
     RemoveButton:
         'px-4 py-2 text-sm font-semibold text-red-500 bg-white border-2 border-red-500 rounded-lg hover:bg-red-500 hover:text-white transition-colors duration-200 focus:outline-none',
 };
@@ -48,7 +47,7 @@ const CartItem = () => {
     };
 
     return (
-        <div className="p-6 bg-white shadow-sm rounded-lg border border-gray-200">
+        <div className="p-6 bg-white shadow-sm rounded-lg border border-gray-200 mb-6">
             <div className="flex lg:items-center">
                 <div className="w-24 h-24 bg-gray-100 rounded-md overflow-hidden">
                     <img
@@ -69,31 +68,30 @@ const CartItem = () => {
                         <p className="text-sm font-medium text-green-600">{product.discount}</p>
                     </div>
                 </div>
-
             </div>
-                <div className="pt-4 mt-6 lg:mt-0 w-full lg:w-auto flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-6">
-                    {/* Using NumberField with modified rendering for the decrement button */}
-                    <NumberField.Root
-                        id={id}
-                        defaultValue={1}
-                        className={styles.Field}
-                        min={minValue}
-                        onChange={(newValue) => setValue(Math.max(minValue, newValue))}
-                    >
-                        <NumberField.Group className={styles.Group}>
-                            {/* Use custom render function for Decrement button */}
-                            <NumberField.Decrement render={renderDecrementButton} />
-                            <NumberField.Input className={styles.Input} />
-                            <NumberField.Increment className={styles.Increment}>
-                                <AddIcon />
-                            </NumberField.Increment>
-                        </NumberField.Group>
-                    </NumberField.Root>
+            <div className="pt-4 mt-6 lg:mt-0 w-full lg:w-auto flex flex-col lg:flex-row items-start lg:items-center space-y-4 lg:space-y-0 lg:space-x-6">
+                {/* Using NumberField with modified rendering for the decrement button */}
+                <NumberField.Root
+                    id={id}
+                    defaultValue={1}
+                    className={styles.Field}
+                    min={minValue}
+                    onValueChange={(event, newValue) => setValue(Math.max(minValue, newValue))}
+                >
+                    <NumberField.Group className={styles.Group}>
+                        {/* Use custom render function for Decrement button */}
+                        <NumberField.Decrement render={renderDecrementButton} />
+                        <NumberField.Input className={styles.Input} />
+                        <NumberField.Increment className={styles.Increment}>
+                            <AddIcon />
+                        </NumberField.Increment>
+                    </NumberField.Group>
+                </NumberField.Root>
 
-                    <button variant="outlined" size="medium" className={styles.RemoveButton}>
-                        Remove
-                    </button>
-                </div>
+                <button variant="outlined" size="medium" className={styles.RemoveButton}>
+                    Remove
+                </button>
+            </div>
         </div>
     );
 };

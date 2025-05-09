@@ -7,7 +7,7 @@ import InventoryIcon from '@mui/icons-material/Inventory';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 const Cart = () => {
     return (
-        <div>
+        <div className='mt-10'>
             <div className="lg:grid grid-cols-3 lg:px-16 relative">
                 <div className="col-span-2">
                     {[1, 1, 1, 1].map((item) => (
