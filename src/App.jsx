@@ -5,8 +5,10 @@ import './App.css';
 import { dividerClasses } from '@mui/material';
 import Navigation from './components/Navigation/nav';
 import HomePage from './pages/HomePage/HomePage';
-import Product from './components/Product/Product';
 import Footer from './components/Footer/Footer';
+import Product from './pages/Product/Product';
+import ProductDetail from './pages/ProductDetail/ProductDetail';
+import Cart from './pages/Cart/Cart';
 
 function App() {
     const [count, setCount] = useState(0);
@@ -16,7 +18,9 @@ function App() {
             <Navigation />
             <div>
                 {/* <HomePage /> */}
-                <Product/>
+                {/* <Product/> */}
+                {/* <ProductDetail/> */}
+                <Cart/>
             </div>
             <Footer/>
         </div>
